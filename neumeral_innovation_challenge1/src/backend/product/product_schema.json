@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Farm Input Product",
+    "description": "Schema to represent a farm input product in ONDC",
+    "type": "object",
+    "properties": {
+        "id": {
+            "description": "Represents uuid4 identifier for the product",
+            "type": "string"
+        },
+        "name": {
+            "description": "Name of the product",
+            "type": "string"
+        },
+        "description": {
+            "description": "Description of the product",
+            "type": "string"
+        }
+    },
+    "required": [
+        "id",
+        "name",
+        "description"
+    ]
+}
