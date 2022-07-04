@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Agri Web</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body class="font-open-sans" style="padding-top: 100px; padding-bottom: 70px">
+        <div class="is-mobile"></div>
+        <div class="py-3 px-4">
+            <input type="file" capture="camera" accept="image/*" id="cameraInput" name="cameraInput">
+        </div>
+        <div class="accessiblity-controller position-fixed">
+            <div class="d-flex justify-content-start w-100">
+                <div data-toggle="on" class="switch-view p-2 rounded-1 border border-1 border-dark">
+                    <span class="toggle-off" aria-label="toggle icons off" style="display: none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="#fff" width="2rem">
+                        <path
+                            d="M50 8.1c23.2 0 41.9 18.8 41.9 41.9 0 23.2-18.8 41.9-41.9 41.9C26.8 91.9 8.1 73.2 8.1 50S26.8 8.1 50 8.1M50 0C22.4 0 0 22.4 0 50s22.4 50 50 50 50-22.4 50-50S77.6 0 50 0zm0 11.3c-21.4 0-38.7 17.3-38.7 38.7S28.6 88.7 50 88.7 88.7 71.4 88.7 50 71.4 11.3 50 11.3zm0 8.9c4 0 7.3 3.2 7.3 7.3S54 34.7 50 34.7s-7.3-3.2-7.3-7.3 3.3-7.2 7.3-7.2zm23.7 19.7c-5.8 1.4-11.2 2.6-16.6 3.2.2 20.4 2.5 24.8 5 31.4.7 1.9-.2 4-2.1 4.7-1.9.7-4-.2-4.7-2.1-1.8-4.5-3.4-8.2-4.5-15.8h-2c-1 7.6-2.7 11.3-4.5 15.8-.7 1.9-2.8 2.8-4.7 2.1-1.9-.7-2.8-2.8-2.1-4.7 2.6-6.6 4.9-11 5-31.4-5.4-.6-10.8-1.8-16.6-3.2-1.7-.4-2.8-2.1-2.4-3.9.4-1.7 2.1-2.8 3.9-2.4 19.5 4.6 25.1 4.6 44.5 0 1.7-.4 3.5.7 3.9 2.4.7 1.8-.3 3.5-2.1 3.9z"
+                        ></path>
+                    </svg>
+                    </span>
+                    <span class="toggle-on" aria-label="toggle icon on">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="#fff" width="2rem">
+                        <path
+                            d="M50 8.1c23.2 0 41.9 18.8 41.9 41.9 0 23.2-18.8 41.9-41.9 41.9C26.8 91.9 8.1 73.2 8.1 50S26.8 8.1 50 8.1M50 0C22.4 0 0 22.4 0 50s22.4 50 50 50 50-22.4 50-50S77.6 0 50 0zm0 11.3c-21.4 0-38.7 17.3-38.7 38.7S28.6 88.7 50 88.7 88.7 71.4 88.7 50 71.4 11.3 50 11.3zm0 8.9c4 0 7.3 3.2 7.3 7.3S54 34.7 50 34.7s-7.3-3.2-7.3-7.3 3.3-7.2 7.3-7.2zm23.7 19.7c-5.8 1.4-11.2 2.6-16.6 3.2.2 20.4 2.5 24.8 5 31.4.7 1.9-.2 4-2.1 4.7-1.9.7-4-.2-4.7-2.1-1.8-4.5-3.4-8.2-4.5-15.8h-2c-1 7.6-2.7 11.3-4.5 15.8-.7 1.9-2.8 2.8-4.7 2.1-1.9-.7-2.8-2.8-2.1-4.7 2.6-6.6 4.9-11 5-31.4-5.4-.6-10.8-1.8-16.6-3.2-1.7-.4-2.8-2.1-2.4-3.9.4-1.7 2.1-2.8 3.9-2.4 19.5 4.6 25.1 4.6 44.5 0 1.7-.4 3.5.7 3.9 2.4.7 1.8-.3 3.5-2.1 3.9z"
+                        ></path>
+                    </svg>
+                    </span>
+                </div>
+            </div>
+            <div class="d-flex pt-3 flex-row-reverse">
+                <div class="accessibility-button">
+                    <!-- <img src="img/accessibility.png" width="100%" height="100%" alt="accessibility icon" /> -->
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width=30px"
+                        height="30px"
+                        fill="#fff"
+                        class="bi bi-gear-fill"
+                        viewBox="0 0 16 16"
+                    >
+                        <path
+                            d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"
+                        />
+                    </svg>
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="#fff" width="2rem">
+                        <path
+                            d="M50 8.1c23.2 0 41.9 18.8 41.9 41.9 0 23.2-18.8 41.9-41.9 41.9C26.8 91.9 8.1 73.2 8.1 50S26.8 8.1 50 8.1M50 0C22.4 0 0 22.4 0 50s22.4 50 50 50 50-22.4 50-50S77.6 0 50 0zm0 11.3c-21.4 0-38.7 17.3-38.7 38.7S28.6 88.7 50 88.7 88.7 71.4 88.7 50 71.4 11.3 50 11.3zm0 8.9c4 0 7.3 3.2 7.3 7.3S54 34.7 50 34.7s-7.3-3.2-7.3-7.3 3.3-7.2 7.3-7.2zm23.7 19.7c-5.8 1.4-11.2 2.6-16.6 3.2.2 20.4 2.5 24.8 5 31.4.7 1.9-.2 4-2.1 4.7-1.9.7-4-.2-4.7-2.1-1.8-4.5-3.4-8.2-4.5-15.8h-2c-1 7.6-2.7 11.3-4.5 15.8-.7 1.9-2.8 2.8-4.7 2.1-1.9-.7-2.8-2.8-2.1-4.7 2.6-6.6 4.9-11 5-31.4-5.4-.6-10.8-1.8-16.6-3.2-1.7-.4-2.8-2.1-2.4-3.9.4-1.7 2.1-2.8 3.9-2.4 19.5 4.6 25.1 4.6 44.5 0 1.7-.4 3.5.7 3.9 2.4.7 1.8-.3 3.5-2.1 3.9z"
+                        ></path>
+                    </svg> -->
+                </div>
+                <div class="accessibility-box p-3">
+                    <div class="w-auto">
+                        <div class="fw-semibold fs-6 pt-2 pb-2">Font Family</div>
+                        <div class="row row-cols-2">
+                            <div class="font-family-option highlight cursor-pointer py-2 selected" data-font="font-open-sans">
+                                <span class="pe-2">A</span>
+                                Open Sans
+                            </div>
+                             <div class="font-family-option highlight cursor-pointer py-2" data-font="font-open-dyslexic">
+                                <span class="pe-2">A</span>
+                                OpenDyslexic
+                            </div>
+                            <div class="font-family-option highlight cursor-pointer py-2" data-font="font-inter">
+                                <span class="pe-2">A</span>
+                                Inter
+                            </div>
+                            <div class="font-family-option highlight cursor-pointer py-2" data-font="font-andika">
+                                <span class="pe-2">A</span>
+                                Andika
+                            </div>
+                            <div class="font-family-option highlight cursor-pointer py-2" data-font="font-eb-garamond">
+                                <span class="pe-2">A</span>
+                                Garamond
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="fw-semibold fs-6 pt-3 pb-2">Font Settings</div>
+                        <div class="row">
+                            <div class="col-6 font-size-option highlight cursor-pointer" data-type="decrease">
+                                <span class="pe-2"
+                                    ><svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        fill="currentColor"
+                                        class="bi bi-dash-circle"
+                                        viewBox="0 0 16 16"
+                                    >
+                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                        <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
+                                    </svg>
+                                </span>
+                                Smaller
+                            </div>
+                            <div class="col-6 font-size-option highlight cursor-pointer" data-type="increase">
+                                <span class="pe-2">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        fill="currentColor"
+                                        class="bi bi-plus-circle"
+                                        viewBox="0 0 16 16"
+                                    >
+                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                        <path
+                                            d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                                        />
+                                    </svg>
+                                </span>
+                                Larger
+                            </div>
+                            <div class="col-6 font-size-option highlight cursor-pointer" data-type="default">
+                                <span class="pe-2"
+                                    ><svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        fill="currentColor"
+                                        class="bi bi-arrow-return-right"
+                                        viewBox="0 0 16 16"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M1.5 1.5A.5.5 0 0 0 1 2v4.8a2.5 2.5 0 0 0 2.5 2.5h9.793l-3.347 3.346a.5.5 0 0 0 .708.708l4.2-4.2a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 8.3H3.5A1.5 1.5 0 0 1 2 6.8V2a.5.5 0 0 0-.5-.5z"
+                                        />
+                                    </svg>
+                                </span>
+                                Default
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-4 reset-all-property cursor-pointer">
+                        <span class="pe-2">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="bi bi-arrow-clockwise"
+                                viewBox="0 0 16 16"
+                            >
+                                <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
+                                <path
+                                    d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"
+                                />
+                            </svg>
+                        </span>
+                        Reset All
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="navbar position-absolute w-100 bg-white ">
+            <div class="container">
+                <div class="d-flex w-100 justify-content-between align-items-center">
+                    <div>
+                         <a class="navbar-brand" href="#">
+                            <img src="/cms/resource/static/img/xhopfront-logo.png" alt="" height="45px" />
+                        </a>
+                    </div>
+                    <div class="">
+                        <div class="each-navlink ms-3 p-3 highlight-hover highlight">
+                            <a class="nav-link color-white px-4 rounded-3 py-2 px-3 login-button" aria-current="page" href="#">Login</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="container my-3">
+            <div class="product-search">
+                <div class="d-flex highlight-hover py-4 w-100 justify-content-center">
+                    <div class="search-box">
+                        <input type="text" id="acc-search-box" class="w-100 py-3 px-3 fs-6 highlight-hover" placeholder="Search" />
+                    </div>
+                    <div>
+                        <button id="search-box-button" type="button" class="btn btn-dark py-3 px-4">Search</button>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="product-list mt-5">
+                    <div class="each-product-card rounded-3 my-3 py-2">
+                        <div class="row p-0 m-0 rounded-3">
+                            <div class="col-12 col-lg-8">
+                                <div class="row product-details-show internal-product-details highlight-hover">
+                                    <div class="col-12 col-lg-6 p-4">
+                                        <div class="w-100 text-center overflow-hidden">
+                                            <img
+                                            class=""
+                                                src="https://images.pexels.com/photos/1279107/pexels-photo-1279107.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                                height="200px"
+                                                alt="product"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-6 px-4 py-2 p-sm-4">
+                                        <div class="fw-bold pb-2 fs-5 each-product-title">Apple Pulp / Pulp Juice</div>
+                                        <div class="each-product-desc"></div>
+                                        <div class="fs-6">
+                                            <span class="fw-semibold">Price:</span>
+                                            <span class="">320 per Ltr</span>
+                                        </div>
+                                        <div class="fs-6">
+                                            <span class="fw-semibold">Sold By:</span>
+                                            <span class="">Distt Mandi Himachal</span>
+                                        </div>
+                                        <div class="pt-3 pt-lg-4">
+                                            <label
+                                                class="color-black view-details py-3 py-lg-0 cursor-pointer px-5 px-lg-0 fs-7 fw-bold"
+                                                for="qty-box"
+                                                >Click to view Details</label
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-4">
+                                <div
+                                    class="w-100 h-100 d-flex justify-content-center align-items-center px-4 py-2 p-sm-4 highlight-hover"
+                                >
+                                    <div>
+                                        <label class="pb-4 text-center w-100 fs-6 fw-bold" for="qty-box"
+                                            >Enter Product Quantity</label
+                                        >
+                                        <div class="dropdown row rounded-2 overflow-hidden row-cols-2">
+                                            <div class="m-0 p-0">
+                                                    <input
+                                                class="dropdown-toggle w-100 quantity-toggle text-center rounded-0 highlight-hover py-2"
+                                                type="text"
+                                                id="dropdownMenuButton1"
+                                                data-bs-toggle="dropdown"
+                                                placeholder="Quantity"
+                                                aria-expanded="false"
+                                            />
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <li><a class="dropdown-item text-center" href="#">1</a></li>
+                                                <li><a class="dropdown-item text-center" href="#">2</a></li>
+                                                <li><a class="dropdown-item text-center" href="#">3</a></li>
+                                                <li><a class="dropdown-item text-center" href="#">4</a></li>
+                                                <li><a class="dropdown-item text-center" href="#">5</a></li>
+                                            </ul>
+                                            </div>
+                                            <div class="m-0 p-0">
+                                                <button class="btn w-100 h-100 border-0 rounded-0 btn-dark m-0">Add</button>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hr my-5 my-lg-0"></div>
+                    <div class="each-product-card rounded-3 my-3 py-2">
+                        <div class="row p-0 m-0 rounded-3">
+                            <div class="col-12 col-lg-8">
+                                <div class="row product-details-show internal-product-details highlight-hover">
+                                    <div class="col-12 col-lg-6 p-4">
+                                        <div class="w-100 overflow-hidden">
+                                            <img
+                                                src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/fruit-1610570153.jpg?crop=1.00xw:0.751xh;0,0.151xh&resize=980:*"
+                                                width="100%"
+                                                alt="product"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-6 px-4 py-2 p-sm-4">
+                                        <div class="fw-bold pb-2 fs-5 each-product-title">Apple Pulp / Pulp Juice</div>
+                                        <div class="each-product-desc"></div>
+                                        <div class="fs-6">
+                                            <span class="fw-semibold">Price:</span>
+                                            <span class="">320 per Ltr</span>
+                                        </div>
+                                        <div class="fs-6">
+                                            <span class="fw-semibold">Sold By:</span>
+                                            <span class="">Distt Mandi Himachal</span>
+                                        </div>
+                                        <div class="pt-3 pt-lg-4">
+                                            <label
+                                                class="color-black view-details py-3 py-lg-0 cursor-pointer px-5 px-lg-0 fs-7 fw-bold"
+                                                for="qty-box"
+                                                >Click to view Details</label
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-4">
+                                <div
+                                    class="w-100 h-100 d-flex justify-content-center align-items-center px-4 py-2 p-sm-4 highlight-hover"
+                                >
+                                    <div>
+                                        <label class="pb-4 text-center w-100 fs-6 fw-bold" for="qty-box"
+                                            >Enter Product Quantity</label
+                                        >
+                                        <div class="dropdown">
+                                            <input
+                                                class="dropdown-toggle quantity-toggle text-center highlight-hover py-2"
+                                                type="text"
+                                                id="dropdownMenuButton1"
+                                                data-bs-toggle="dropdown"
+                                                placeholder="Quantity"
+                                                aria-expanded="false"
+                                            />
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <li><a class="dropdown-item text-center" href="#">1</a></li>
+                                                <li><a class="dropdown-item text-center" href="#">2</a></li>
+                                                <li><a class="dropdown-item text-center" href="#">3</a></li>
+                                                <li><a class="dropdown-item text-center" href="#">4</a></li>
+                                                <li><a class="dropdown-item text-center" href="#">5</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hr my-5 my-lg-0"></div>
+                    <div class="each-product-card rounded-3 my-3 py-2">
+                        <div class="row p-0 m-0 rounded-3">
+                            <div class="col-12 col-lg-8">
+                                <div class="row product-details-show internal-product-details highlight-hover">
+                                    <div class="col-12 col-lg-6 p-4">
+                                        <div class="w-100 overflow-hidden">
+                                            <img
+                                                src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/fruit-1610570153.jpg?crop=1.00xw:0.751xh;0,0.151xh&resize=980:*"
+                                                width="100%"
+                                                alt="product"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-6 px-4 py-2 p-sm-4">
+                                        <div class="fw-bold pb-2 fs-5 each-product-title">Apple Pulp / Pulp Juice</div>
+                                        <div class="each-product-desc"></div>
+                                        <div class="fs-6">
+                                            <span class="fw-semibold">Price:</span>
+                                            <span class="">320 per Ltr</span>
+                                        </div>
+                                        <div class="fs-6">
+                                            <span class="fw-semibold">Sold By:</span>
+                                            <span class="">Distt Mandi Himachal</span>
+                                        </div>
+                                        <div class="pt-3 pt-lg-4">
+                                            <label
+                                                class="color-black view-details py-3 py-lg-0 cursor-pointer px-5 px-lg-0 fs-7 fw-bold"
+                                                for="qty-box"
+                                                >Click to view Details</label
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-4">
+                                <div
+                                    class="w-100 h-100 d-flex justify-content-center align-items-center px-4 py-2 p-sm-4 highlight-hover"
+                                >
+                                    <div>
+                                        <label class="pb-4 text-center w-100 fs-6 fw-bold" for="qty-box"
+                                            >Enter Product Quantity</label
+                                        >
+                                        <div class="dropdown">
+                                            <input
+                                                class="dropdown-toggle quantity-toggle text-center highlight-hover py-2"
+                                                type="text"
+                                                id="dropdownMenuButton1"
+                                                data-bs-toggle="dropdown"
+                                                placeholder="Quantity"
+                                                aria-expanded="false"
+                                            />
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <li><a class="dropdown-item text-center" href="#">1</a></li>
+                                                <li><a class="dropdown-item text-center" href="#">2</a></li>
+                                                <li><a class="dropdown-item text-center" href="#">3</a></li>
+                                                <li><a class="dropdown-item text-center" href="#">4</a></li>
+                                                <li><a class="dropdown-item text-center" href="#">5</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hr my-5 my-lg-0"></div>
+                    <div class="each-product-card rounded-3 my-3 py-2">
+                        <div class="row p-0 m-0 rounded-3">
+                            <div class="col-12 col-lg-8">
+                                <div class="row product-details-show internal-product-details highlight-hover">
+                                    <div class="col-12 col-lg-6 p-4">
+                                        <div class="w-100 overflow-hidden">
+                                            <img
+                                                src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/fruit-1610570153.jpg?crop=1.00xw:0.751xh;0,0.151xh&resize=980:*"
+                                                width="100%"
+                                                alt="product"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-6 px-4 py-2 p-sm-4">
+                                        <div class="fw-bold pb-2 fs-5 each-product-title">Apple Pulp / Pulp Juice</div>
+                                        <div class="each-product-desc"></div>
+                                        <div class="fs-6">
+                                            <span class="fw-semibold">Price:</span>
+                                            <span class="">320 per Ltr</span>
+                                        </div>
+                                        <div class="fs-6">
+                                            <span class="fw-semibold">Sold By:</span>
+                                            <span class="">Distt Mandi Himachal</span>
+                                        </div>
+                                        <div class="pt-3 pt-lg-4">
+                                            <label
+                                                class="color-black view-details py-3 py-lg-0 cursor-pointer px-5 px-lg-0 fs-7 fw-bold"
+                                                for="qty-box"
+                                                >Click to view Details</label
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-4">
+                                <div
+                                    class="w-100 h-100 d-flex justify-content-center align-items-center px-4 py-2 p-sm-4 highlight-hover"
+                                >
+                                    <div>
+                                        <label class="pb-4 text-center w-100 fs-6 fw-bold" for="qty-box"
+                                            >Enter Product Quantity</label
+                                        >
+                                        <div class="dropdown">
+                                            <input
+                                                class="dropdown-toggle quantity-toggle text-center highlight-hover py-2"
+                                                type="text"
+                                                id="dropdownMenuButton1"
+                                                data-bs-toggle="dropdown"
+                                                placeholder="Quantity"
+                                                aria-expanded="false"
+                                            />
+                                            <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton1">
+                                                <li><a class="dropdown-item text-center" href="#">1</a></li>
+                                                <li><a class="dropdown-item text-center" href="#">2</a></li>
+                                                <li><a class="dropdown-item text-center" href="#">3</a></li>
+                                                <li><a class="dropdown-item text-center" href="#">4</a></li>
+                                                <li><a class="dropdown-item text-center" href="#">5</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <ul class="pagination justify-content-center justify-content-md-end rounded-2">
+                    <li class="page-item"><a class="page-link fw-semibold" href="#">Previous</a></li>
+                    <li class="page-item"><a class="page-link fw-semibold" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link fw-semibold" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link fw-semibold" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link fw-semibold" href="#">Next</a></li>
+                </ul> -->
+            </div>
+        </div>
+
+        <div class="bottom-cart-option bg-white position-fixed bottom-0 w-100">
+            <div class="container">
+                <div class="row row-cols-2 border border-1">
+                    <div class="d-flex justify-content-center align-items-center py-3 total-price">
+                        <div class="fw-semibold fs-7 color-primary">Total:</div>
+                        <div class="fs-6 fw-bolder ps-2">$ 458</div>
+                    </div>
+                    <div
+                        class="text-center cursor-pointer bg-button color-white checkout-button fw-bolder fw-6 ls-1 py-3 d-flex align-items-center justify-content-center cart-modal-show button-hover"
+                    >
+                        <span>Checkout</span>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="25"
+                            height="25"
+                            fill="currentColor"
+                            class="bi bi-arrow-right-short ms-1"
+                            viewBox="0 0 16 16"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                            />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-custom product-details-modal" style="display: none">
+            <div class="navbar position-absolute w-100 bg-white ">
+                    <div class="container">
+                        <div class="d-flex w-100 justify-content-between align-items-center">
+                            <div>
+                                <a class="navbar-brand" href="#">
+                                    <img src="/cms/resource/static/img/xhopfront-logo.png" alt="" height="45px" />
+                                </a>
+                            </div>
+                            <div class="">
+                                <div class="each-navlink ms-3 p-3 highlight-hover highlight">
+                                    <a class="nav-link color-white px-4 rounded-3 py-2 px-3 login-button" aria-current="page" href="#">Login</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="modal-custom-content rounded-0 position-relative">
+                    <div class="product-details p-3 p-sm-5 pb-0">
+                        <div class="container" style="padding-top: 100px;">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="position-relative">
+                                    <div class="d-flex justify-content-center align-items-center product-image">
+                                        <div class="wishlist rounded-circle">
+                                            <svg
+                                                data-value="false"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="16"
+                                                height="16"
+                                                fill="#b6b6b6"
+                                                class="bi bi-heart-fill"
+                                                viewBox="0 0 16 16"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
+                                                />
+                                            </svg>
+                                        </div>
+                                        <img src="" class="rounded" alt="product" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="py-4 px-3 p-md-5">
+                                    <div class="fs-3 ls-1 fw-bold">I am a product</div>
+                                    <div class="seller">
+                                        <span class="fs-7 color-light fw-semibold">Seller: </span>
+                                        <span class="fs-7 color-light">ABC compny pvt. ltd</span>
+                                    </div>
+                                    <div class="reviews">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="20"
+                                            height="20"
+                                            fill="currentColor"
+                                            class="bi bi-star-fill"
+                                            viewBox="0 0 16 16"
+                                        >
+                                            <path
+                                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                            />
+                                        </svg>
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="20"
+                                            height="20"
+                                            fill="currentColor"
+                                            class="bi bi-star-fill"
+                                            viewBox="0 0 16 16"
+                                        >
+                                            <path
+                                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                            />
+                                        </svg>
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="20"
+                                            height="20"
+                                            fill="currentColor"
+                                            class="bi bi-star-fill"
+                                            viewBox="0 0 16 16"
+                                        >
+                                            <path
+                                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                            />
+                                        </svg>
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="20"
+                                            height="20"
+                                            fill="currentColor"
+                                            class="bi bi-star-fill"
+                                            viewBox="0 0 16 16"
+                                        >
+                                            <path
+                                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                            />
+                                        </svg>
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="20"
+                                            height="20"
+                                            fill="currentColor"
+                                            class="bi bi-star-half"
+                                            viewBox="0 0 16 16"
+                                        >
+                                            <path
+                                                d="M5.354 5.119 7.538.792A.516.516 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0 1 16 6.32a.548.548 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.52.52 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.58.58 0 0 1 .085-.302.513.513 0 0 1 .37-.245l4.898-.696zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.565.565 0 0 1 .162-.505l2.907-2.77-4.052-.576a.525.525 0 0 1-.393-.288L8.001 2.223 8 2.226v9.8z"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <div class="fs-5 fw-semibold my-3">$ 45.5</div>
+
+                                    <!-- <div class="product-count my-3 rounded d-inline-block">
+                                        <div class="d-flex">
+                                            <div class="each-counter-item reduce px-3 my-1 fs-5 fw-bold">-</div>
+                                            <div class="each-counter-item value px-2 my-1 fs-5 fw-semibold">1</div>
+                                            <div class="each-counter-item increase px-3 my-1 fs-5 fw-bold">+</div>
+                                        </div>
+                                    </div> -->
+
+                                    <div class="mt-4">
+                                        <button type="button" class="btn btn-dark px-4 py-2 me-3 ls-1 fw-semibold">
+                                            Add to Cart
+                                        </button>
+                                    </div>
+                                    <!-- <div class="fs-6">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et sagittis libero, sit amet malesuada
+                            nisi. Fusce fermentum sed ex pharetra aliquet. Mauris pretium, nisl vitae fermentum tincidunt, ante
+                            arcu finibus orci, eget consectetur est tellus non ante. Suspendisse potenti. Nulla consequat luctus
+                            mattis. Mauris scelerisque elit et libero imperdiet tincidunt. In ac ante risus. Nam sed eros metus.
+                            Etiam dignissim eu dolor non tristique. Sed nec est nec risus porta viverra a at turpis. Nunc lacinia
+                            augue tempor, tempor tortor at, vehicula dolor. Quisque interdum, tortor sed mattis vestibulum, massa
+                            ante faucibus mi, ut euismod magna est sed odio. Mauris in sodales est. Proin id odio eget velit
+                            pharetra porttitor sit amet eget quam. Nullam maximus imperdiet massa quis tincidunt. Donec et finibus
+                            nibh, ac elementum magna. Nullam blandit viverra nunc, nec faucibus nibh egestas nec. Aenean finibus
+                            quam et dui ornare, at egestas orci lobortis. Suspendisse vehicula lorem ut ex tempus egestas.
+                            Praesent sagittis vitae nisl ac posuere. Nulla lobortis lobortis vestibulum. Nam sed imperdiet neque,
+                            sed pretium tortor. Phasellus lacinia leo a magna luctus aliquet. Donec hendrerit varius feugiat. Ut a
+                            tortor nec mi lobortis finibus eu sed sapien. In aliquam aliquam orci, nec iaculis mauris sodales id.
+                            In a orci quis lacus iaculis laoreet eu in massa. Donec fringilla feugiat felis id imperdiet.
+                        </div> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row my-4">
+                            <div class="col-md-6">
+                                <div class="fs-6 pb-3 fw-bold">Description</div>
+                                <div class="fs-7">
+                                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
+                                    classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a
+                                    Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin
+                                    words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in
+                                    classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections
+                                    1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by
+                                    Cicero,
+                                </div>
+                            </div>
+                            <div class="col-md-6 pt-3 mt-md-0">
+                                <div class="fs-6 pb-3 fw-bold">Details</div>
+                                <div>
+                                    <table class="table fs-7">
+                                        <!-- <thead>
+                                                <tr>
+                                                    <th scope="col text-center">First</th>
+                                                    <th scope="col text-center">Last</th>
+                                                </tr>
+                                            </thead> -->
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">Type</th>
+                                                <td class="text-center">Mark</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Categry</th>
+                                                <td class="text-center">Jacob</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Inbox</th>
+                                                <td colspan="2">Larry the Bird</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-100 bottom-0 container p-0 product-details-close">
+                    <button class="btn btn-dark py-3 fw-bold h-100 ls-1 w-100">
+                        <span aria-label="back arrow svg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
+</svg></span>
+                        Back</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-custom cart-modal rounded-0" style="display: none">
+            <div class="navbar position-absolute w-100 bg-white ">
+                <div class="container">
+                    <div class="d-flex w-100 justify-content-between align-items-center">
+                        <div>
+                            <a class="navbar-brand" href="#">
+                                <img src="/cms/resource/static/img/xhopfront-logo.png" alt="" height="45px" />
+                            </a>
+                        </div>
+                        <div class="">
+                            <div class="each-navlink ms-3 p-3 highlight-hover highlight">
+                                <a class="nav-link color-white px-4 rounded-3 py-2 px-3 login-button" aria-current="page" href="#">Login</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="modal-custom-content">
+                <div class="p-5 pb-0 container">
+                    <div class="">
+                        <div class="fs-5 fw-bolder">Cart</div>
+                    </div>
+                    <div class="titles py-3 pt-4">
+                        <div class="row">
+                            <div class="col-2">
+                                <div class="text-center fw-bold text-capitalize">Image</div>
+                            </div>
+                            <div class="col-5"><div class="text-center fw-bold text-capitalize">Product</div></div>
+                            <div class="col-2"><div class="text-center fw-bold text-capitalize">Qty</div></div>
+                            <div class="col-2"><div class="text-center fw-bold text-capitalize">Price</div></div>
+                            <div class="col-1"></div>
+                        </div>
+                    </div>
+                    <div class="hr"></div>
+                    <div class="each-cart-item">
+                        <div class="row">
+                            <div class="col-2">
+                                <div class="d-flex justify-content-center w-100">
+                                    <img
+                                        class="img-responsive"
+                                        src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/fruit-1610570153.jpg?crop=1.00xw:0.751xh;0,0.151xh&resize=980:*"
+                                        width="90%"
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                <div class="d-flex justify-content-center align-items-center h-100 px-4">
+                                    Puma Women Black Avenue Shopper Handbag Onesize
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="d-flex justify-content-center align-items-center h-100">
+                                    <div class="dropdown">
+                                        <input
+                                            class="dropdown-toggle form-control quantity-toggle rounded text-center py-2 highlight"
+                                            type="number"
+                                            id="dropdownMenuButton1"
+                                            data-bs-toggle="dropdown"
+                                            placeholder="Type Quantity"
+                                            aria-expanded="false"
+                                        />
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                            <li><a class="dropdown-item text-center" href="#">1</a></li>
+                                            <li><a class="dropdown-item text-center" href="#">2</a></li>
+                                            <li><a class="dropdown-item text-center" href="#">3</a></li>
+                                            <li><a class="dropdown-item text-center" href="#">4</a></li>
+                                            <li><a class="dropdown-item text-center" href="#">5</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="d-flex justify-content-center w-100 align-items-center h-100 fw-semibold">
+                                    <span aria-label="Doller Sign">$</span>
+                                    33.32
+                                </div>
+                            </div>
+                            <div class="col-1">
+                                <div class="d-flex justify-content-center align-items-center h-100 cursor-pointer">
+                                    <span aria-label="Delete icon" class="color-red">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="25px"
+                                            height="25px"
+                                            fill="currentColor"
+                                            class="bi bi-trash"
+                                            viewBox="0 0 16 16"
+                                        >
+                                            <path
+                                                d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"
+                                            />
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"
+                                            />
+                                        </svg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hr opacity-50"></div>
+                    <div class="each-cart-item">
+                        <div class="row">
+                            <div class="col-2">
+                                <div class="d-flex justify-content-center w-100">
+                                    <img
+                                        class="img-responsive"
+                                        src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/fruit-1610570153.jpg?crop=1.00xw:0.751xh;0,0.151xh&resize=980:*"
+                                        width="90%"
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                <div class="d-flex justify-content-center align-items-center h-100 px-4">
+                                    Puma Women Black Avenue Shopper Handbag Onesize
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="d-flex justify-content-center align-items-center h-100">
+                                    <div class="dropdown">
+                                        <input
+                                            class="dropdown-toggle form-control quantity-toggle rounded text-center py-2 highlight"
+                                            type="number"
+                                            id="dropdownMenuButton1"
+                                            data-bs-toggle="dropdown"
+                                            placeholder="Type Quantity"
+                                            aria-expanded="false"
+                                        />
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                            <li><a class="dropdown-item text-center" href="#">1</a></li>
+                                            <li><a class="dropdown-item text-center" href="#">2</a></li>
+                                            <li><a class="dropdown-item text-center" href="#">3</a></li>
+                                            <li><a class="dropdown-item text-center" href="#">4</a></li>
+                                            <li><a class="dropdown-item text-center" href="#">5</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="d-flex justify-content-center w-100 align-items-center h-100 fw-semibold">
+                                    <span aria-label="Doller Sign">$</span>
+                                    33.32
+                                </div>
+                            </div>
+                            <div class="col-1">
+                                <div class="d-flex justify-content-center align-items-center h-100 cursor-pointer">
+                                    <span aria-label="Delete icon" class="color-red">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="25px"
+                                            height="25px"
+                                            fill="currentColor"
+                                            class="bi bi-trash"
+                                            viewBox="0 0 16 16"
+                                        >
+                                            <path
+                                                d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"
+                                            />
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"
+                                            />
+                                        </svg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hr opacity-50"></div>
+                    <div class="each-cart-item">
+                        <div class="row">
+                            <div class="col-2">
+                                <div class="d-flex justify-content-center w-100">
+                                    <img
+                                        class="img-responsive"
+                                        src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/fruit-1610570153.jpg?crop=1.00xw:0.751xh;0,0.151xh&resize=980:*"
+                                        width="90%"
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                <div class="d-flex justify-content-center align-items-center h-100 px-4">
+                                    Puma Women Black Avenue Shopper Handbag Onesize
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="d-flex justify-content-center align-items-center h-100">
+                                    <div class="dropdown">
+                                        <input
+                                            class="dropdown-toggle form-control quantity-toggle rounded text-center py-2 highlight"
+                                            type="text"
+                                            id="dropdownMenuButton1"
+                                            data-bs-toggle="dropdown"
+                                            placeholder="Type Quantity"
+                                            aria-expanded="false"
+                                        />
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                            <li><a class="dropdown-item text-center" href="#">1</a></li>
+                                            <li><a class="dropdown-item text-center" href="#">2</a></li>
+                                            <li><a class="dropdown-item text-center" href="#">3</a></li>
+                                            <li><a class="dropdown-item text-center" href="#">4</a></li>
+                                            <li><a class="dropdown-item text-center" href="#">5</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="d-flex justify-content-center w-100 align-items-center h-100 fw-semibold">
+                                    <span aria-label="Doller Sign">$</span>
+                                    33.32
+                                </div>
+                            </div>
+                            <div class="col-1">
+                                <div class="d-flex justify-content-center align-items-center h-100 cursor-pointer">
+                                    <span aria-label="Delete icon" class="color-red">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="25px"
+                                            height="25px"
+                                            fill="currentColor"
+                                            class="bi bi-trash"
+                                            viewBox="0 0 16 16"
+                                        >
+                                            <path
+                                                d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"
+                                            />
+                                            <path
+                                                fill-rule="evenodd"
+                                                d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"
+                                            />
+                                        </svg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-cols-1 row-cols-md-2">
+                        <div class="address-area p-3 p-sm-5 p-md-5">
+                            <div class="pb-2">
+                                <div class="fs-6 fw-bolder">Address</div>
+                            </div>
+                            <div class="">
+                                <div class="py-2">
+                                    <div class="fs-8 fw-semibold color-light pb-2">Name</div>
+                                    <input type="text" class="form-control py-3 fs-6" name="name" placeholder="Enter your Name" />    
+                                </div>
+                                <div class="py-2">
+                                    <div class="fs-8 fw-semibold color-light pb-2">Mobile Number</div>
+                                    <input type="tel" class="form-control py-3 fs-6" name="contactno" placeholder="Enter your Mobile No." />    
+                                </div>
+                                <div class=" py-2">
+                                    <div class="fs-8 fw-semibold color-light pb-2">Pincode</div>
+                                    <input type="text" class="form-control py-3 fs-6" name="pincode" placeholder="Pincode" />    
+                                </div>
+                                <div class="py-2">
+                                    <div class="fs-8 fw-semibold color-light pb-2">Apartment / Society / Area</div>
+                                    <textarea type="text" class="form-control py-3 fs-6" name="address" placeholder="Your complete address" rows="3"></textarea>    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bill-details p-3 p-sm-5 p-md-5">
+                            <div class="pb-2">
+                                <div class="fs-6 fw-bolder">Order Details</div>
+                            </div>
+                            <div class="pt-4">
+                                <div class="d-flex pt-3 justify-content-between">
+                                    <div class="color-light fw-semibold fs-7">Subtotal</div>
+                                    <div><span aria-label="doller sign">$</span><span>37.3</span></div>
+                                </div>
+                                <div class="d-flex pt-3 justify-content-between">
+                                    <div class="color-light fw-semibold fs-7">Delivery Cost</div>
+                                    <div><span aria-label="doller sign">$</span><span>37.3</span></div>
+                                </div>
+                                <div class="d-flex pt-3 justify-content-between">
+                                    <div class="color-light fw-semibold fs-7">Discounts</div>
+                                    <div><span aria-label="doller sign">$</span><span>37.3</span></div>
+                                </div>  
+                                <div class="d-flex pt-3 justify-content-between">
+                                    <div class="color-light fw-semibold fs-7">Taxes</div>
+                                    <div><span aria-label="doller sign">$</span><span>37.3</span></div>
+                                </div>
+                                <div class="hr mt-3"></div>
+                                <div class="d-flex pt-3 justify-content-between">
+                                    <div class="color-dark fw-bold">Grand Total</div>
+                                    <div class="fw-bold"><span aria-label="doller sign">$</span><span>37.3</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row container p-0 m-auto row-cols-1 row-cols-sm-2">
+                    <div class="bottom-0 cart-modal-close p-0 pe-sm-0">
+                        <button class="btn btn-outline-dark py-3 fw-bold ls-1 w-100">
+                            <span aria-label="back arrow svg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
+</svg>
+                            </span>
+                            Back</button>
+                    </div>
+                    <div class="bottom-0 cart-modal-paynow p-0 ps-sm-0">
+                        <button class="btn btn-dark py-3 fw-bold ls-1 w-100">
+                            <span aria-label="Doller symbol">$</span> 45 Paynow
+                            <span aria-label="right arrow icon">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="25"
+                                    height="25"
+                                    fill="currentColor"
+                                    class="bi bi-arrow-right-short ms-1"
+                                    viewBox="0 0 16 16"
+                                >
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                                    />
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>

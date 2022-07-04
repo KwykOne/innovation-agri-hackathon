@@ -1,0 +1,180 @@
+import java.lang.*;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+
+import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
+
+import com.cabin4j.suite.cms.data.DRLCMSRendererContext;
+import com.cabin4j.suite.entity.platform.enums.Version;
+import com.cabin4j.suite.platform.services.GlobalPropertiesService;
+import com.cabin4j.suite.platform.services.impl.NodeResolverService;
+import com.cabin4j.utility.SpringUtils;
+import com.xhopfront.data.CurrencyData;
+import com.xhopfront.entities.CommerceStore;
+import com.xhopfront.entities.PSU;
+import com.xhopfront.entities.SKU;
+import com.xhopfront.service.XFPSUService;
+import com.xhopfront.service.XFProductService;
+import com.xhopfront.service.XFSessionService;
+import com.xhopfront.store.service.EntityManagerResolver;
+
+import com.ondc.service.ContextulizeSearch;
+
+global  SpringUtils springUtils;
+
+rule "xfSearchResultComponentRenderer"
+when
+   $data : DRLCMSRendererContext();
+then
+
+
+
+
+
+
+
+
+
+
+   		Logger log = LoggerFactory.getLogger(Object.class);
+   		if (null != $data.getParams()) {
+   			EntityManager em = springUtils.getBean(EntityManagerResolver.class).getEntityManager();
+   			XFSessionService xfSessionService = springUtils.getBean(XFSessionService.class);
+   			GlobalPropertiesService globalPropertiesService = springUtils.getBean(GlobalPropertiesService.class);
+   			NodeResolverService nodeResolverService = springUtils.getBean(NodeResolverService.class);
+   			ContextulizeSearch contextulizeSearch =  springUtils.getBean(ContextulizeSearch.class);
+   			CurrencyData currency = xfSessionService.getSessionCurrency();
+   			Long catalogue_pk = xfSessionService.getCommerceStoreInSession().getProductCatalogue().getPk();
+   			Map<String, Object> pageParams = null != $data.getParams().get("parameters") ? (Map<String, Object>) $data.getParams().get("parameters") : Collections.emptyMap();
+   			String order = null !=  pageParams.get("order") ? ((String) pageParams.get("order")).trim() : null;
+   			Map<String, String> orderByMap = Map.of("order-1", " sku.name ASC", "order-2", " sku.name DESC",
+   					"order-3", " psu.price ASC", " order-4", " psu.price DESC");
+   			List<String> psuAttrs = Arrays.asList("order-3", "order-4");
+   			Map<String, Object> params = new HashMap<>();
+   			StringBuilder searchQuery = new StringBuilder();
+   			searchQuery.append("SELECT * FROM ondc.sku sku ");
+   			if (null != pageParams.get("groups") && StringUtils.isNotBlank((String)pageParams.get("groups"))) {
+   				searchQuery.append("inner join (SELECT sgp.sku_pk sgp_sku_pk, count(sgp.sku_pk) totalcount FROM ondc.sku_groupings sgp ");
+   				searchQuery.append("inner join ondc._grouping gp on gp.pk = sgp.groupings_pk ");
+   				searchQuery.append(" WHERE gp.code IN (:groups) GROUP BY sgp.sku_pk ) tg on tg.sgp_sku_pk = sku.pk ");
+   				params.put("groups", Arrays.asList(((String) pageParams.get("groups")).split(",")));
+   			}
+   			if (null != pageParams.get("stores") && StringUtils.isNotBlank((String)pageParams.get("stores"))) {
+   				searchQuery.append("inner join ondc.store st on st.pk = sku.store_pk ");
+   			}
+   			if ((null != pageParams.get("min") && StringUtils.isNotBlank((String)pageParams.get("min"))) || (null != pageParams.get("max") && StringUtils.isNotBlank((String)pageParams.get("max"))) || psuAttrs.contains(order)) {
+   				searchQuery.append("inner join ondc.psu psu on psu.product_pk = sku.pk ");
+   			}
+   			searchQuery.append(
+   					"WHERE sku.catalogue_pk = :catalogue_pk AND sku.version = :version AND sku.searchable = :searchable ");
+   			params.put("catalogue_pk", catalogue_pk);
+   			params.put("version", "1");
+   			params.put("searchable", "1");
+   			if (null != pageParams.get("query") && StringUtils.isNotBlank((String)pageParams.get("query"))) {
+   				searchQuery.append(
+   						"AND MATCH (sku.code,sku.name,sku.description) AGAINST (:query IN NATURAL LANGUAGE MODE) ");
+   				params.put("query",contextulizeSearch.contextulizedSearch(((String) pageParams.get("query")).trim(),true));
+   				//params.put("query", ((String) pageParams.get("query")).trim());
+   			}
+   			if ((null != pageParams.get("min") && StringUtils.isNotBlank((String)pageParams.get("min"))) || (null != pageParams.get("max") && StringUtils.isNotBlank((String)pageParams.get("max"))) || psuAttrs.contains(order)) {
+   				searchQuery.append("AND psu.currency_pk = :currency ");
+   				params.put("currency", currency.getPk());
+   				if (null != pageParams.get("min") && StringUtils.isNotBlank((String)pageParams.get("min"))) {
+   					searchQuery.append("AND psu.price >= :min ");
+   					params.put("min", new BigDecimal(((String) pageParams.get("min")).replaceAll(",", "")));
+   				}
+   				if (null != pageParams.get("max") && StringUtils.isNotBlank((String)pageParams.get("max"))) {
+   					searchQuery.append("AND psu.price <= :max ");
+   					params.put("max", new BigDecimal(((String) pageParams.get("max")).replaceAll(",", "")));
+   				}
+   			}
+   			if (null != pageParams.get("stores") && StringUtils.isNotBlank((String)pageParams.get("stores"))) {
+   				searchQuery.append("AND st.code IN (:stores) ");
+   				params.put("stores", Arrays.asList(((String) pageParams.get("stores")).split(",")));
+   			}
+   			if ((null != pageParams.get("min") && StringUtils.isNotBlank((String)pageParams.get("min"))) || (null != pageParams.get("max") && StringUtils.isNotBlank((String)pageParams.get("max"))) || psuAttrs.contains(order)) {
+   				searchQuery.append("GROUP BY sku.pk ");
+   			}			
+   			if (null != pageParams.get("groups") && StringUtils.isNotBlank((String)pageParams.get("groups"))) {
+   				if (StringUtils.isNotBlank(order) && orderByMap.containsKey(order)) {
+   					if(psuAttrs.contains(order)) {
+   						if(order.equals("order-3")) {
+   							searchQuery.append("ORDER BY tg.totalcount DESC, COALESCE(psu.discount_price, psu.price), psu.price ASC");
+   						}
+   						if(order.equals("order-4")) {
+   							searchQuery.append("ORDER BY tg.totalcount DESC, COALESCE(psu.discount_price, psu.price), psu.price DESC");
+   						}
+   					} else {					
+   						searchQuery.append("ORDER BY tg.totalcount DESC, ").append(orderByMap.get(order));
+   					}
+   				} else {
+   					searchQuery.append("ORDER BY tg.totalcount DESC");
+   				}
+   			} else {
+   				if (StringUtils.isNotBlank(order) && orderByMap.containsKey(order)) {
+   					if(psuAttrs.contains(order)) {
+   						if(order.equals("order-3")) {
+   							searchQuery.append("ORDER BY COALESCE(psu.discount_price, psu.price), psu.price ASC");
+   						}
+   						if(order.equals("order-4")) {
+   							searchQuery.append("ORDER BY COALESCE(psu.discount_price, psu.price), psu.price DESC");
+   						}
+   					} else {					
+   						searchQuery.append("ORDER BY ").append(orderByMap.get(order));
+   					}
+   				} 
+   			}
+   			System.out.println("************************* Query:\n" + searchQuery);
+   			System.out.println(StringUtils.join(";", params));
+   			Query q = em.createNativeQuery(searchQuery.toString(), SKU.class);
+   			for (Entry<String, Object> param : params.entrySet()) {
+   				q.setParameter(param.getKey(), param.getValue());
+   			}
+   			int pageSize = Integer.valueOf(globalPropertiesService.getPropertyFromCache("search.result.size", null));
+   			int currentPage = (null != pageParams.get("page") && StringUtils.isNotBlank((String) pageParams.get("page"))) ? Integer.valueOf((String) pageParams.get("page")) : 1;
+   			int resultStartCount = (pageSize * currentPage) - pageSize;
+   			q.setFirstResult(resultStartCount).setMaxResults(pageSize);
+   			List<SKU> values = q.getResultList();
+   			List<Map<String, Object>> products = new ArrayList<>();
+   			if (CollectionUtils.isNotEmpty(values)) {				
+   				XFProductService xfProductService = springUtils.getBean(XFProductService.class);
+   				XFPSUService xfPSUService = springUtils.getBean(XFPSUService.class);
+   				final Version VERSION = Version.Staged;
+   				for (SKU sku : values) {
+   					if (sku.isActive()) {
+   						try {
+   							CommerceStore commerceStore = xfSessionService.getCommerceStoreInSession();
+   							PSU psu = xfPSUService.getAvailablePSUWithLowestPrice(sku.getCode().trim(),
+   									commerceStore.getProductCatalogue(), VERSION, currency.getIsocode());
+   							if (null != psu) {
+   								products.add(Map.of("product",
+   										xfProductService.getProductData(sku,
+   												xfSessionService.getSessionLocale().getCode()),
+   										"psu", psu));
+   							}
+   						} catch (Exception e) {
+   							log.error("Exception occurred while getting PSU for sku with code {}.", sku.getCode(), e);
+   						}
+   					}
+   				}
+   			}
+   			$data.getContext().put("products", products);
+   			$data.getContext().put("currentPage", currentPage);
+   			$data.getContext().put("resultStartCount", resultStartCount);
+   			$data.getContext().put("resultEndCount", (resultStartCount + values.size()));
+   		}
+end
