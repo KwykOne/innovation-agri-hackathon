@@ -10,7 +10,7 @@ The solution is built as a Telegram bot, that allows any user to manage their pr
 ### Demo
 
 Use link https://t.me/HesaMandiBot or find `@HesaMandiBot` in Telegram app
-to access demo.
+to access demo. Check https://youtu.be/pOX-NQE-7yA for video demo.
 
 ### Structure of Repository
 - `src` folder contains python code
