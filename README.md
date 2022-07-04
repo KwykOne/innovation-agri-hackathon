@@ -1,1 +1,0 @@
-# innovation-agri-hackathon
