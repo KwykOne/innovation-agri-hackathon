@@ -1,6 +1,0 @@
-module Pods_RainbowCatalogAppNew_RainbowCatalogAppNewTests {
-  umbrella header "Pods-RainbowCatalogAppNew-RainbowCatalogAppNewTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
