@@ -1,35 +1,19 @@
-Chalange Statement1
+# innovation-agri-hackathon
 
-The objective of this challenge is to develop a prototype that allows contextualized search for a farm input that results in relevant product details.
+# challange1
+[challange1](https://www.allbvegan.com/ecommerce/ondc/challange/1)
 
+# challange2
+[challange2](https://www.allbvegan.com/ecommerce/ondc/challange/2)
 
-# Challenge	: Match product to purpose
+# challange3
+[challange3](https://www.allbvegan.com/ecommerce/ondc/challange/3)
 
-# Definition	: The objective of this challenge is to develop a prototype that allows contextualized search for a farm input that results in relevant product details.	
+# challange4
+[challange4](https://www.allbvegan.com/ecommerce/ondc/challange/4)
 
-Assumptions (if any)	
-user register with details 
+# challange5
+[challange5](https://www.allbvegan.com/ecommerce/ondc/challange/5)
 
-Working demo of prototype	
-[working link](https://www.allbvegan.com/farmselect)
-
-Instructions to build & operate the app	
-click on the link above and register
-
-Reusability (APIs, algorithms, data sets, etc)	
-possible via registration
-
-Extensibility (to other use cases)	
-possible
-
-Scalability (can this work at population scale)	
-fargate based structure
-
-Compliance to Security standards and transaction guarantees (as applicable)	
-jwt
-
-Additional information (on algorithms, data / control flow, etc) as applicable
-user -> 
-
-Match product to purpose	
-
+# challange6
+[challange6](https://www.allbvegan.com/ecommerce/ondc/challange/6)
