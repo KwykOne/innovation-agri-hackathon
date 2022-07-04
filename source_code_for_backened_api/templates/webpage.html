@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  /* margin-left: 200px; */
+  /* background: #5d9ab2 url("img_tree.png") no-repeat top left; */
+}
+
+.center_div {
+  border: 1px solid gray;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  background-color: #d0f0f6;
+  text-align: left;
+  padding: 8px;
+}
+</style>
+</head>
+<body>
+
+<div class="center_div">
+  <h1>qZense Labs</h1>
+</div>
+
+<p id="timestamp">Timestamp :{{timestamp}}</p>
+<p id="category"></p>
+<p id="commodity_name"></p>
+<p id="commodity_variety"></p>
+<p id="commodity_size"></p>
+<p id="commodity_defect_type"></p>
+<p id="commodity_defect_value"></p>
+<p id="rank"></p>
+<p id="shelflife"></p>
+<img src='data:image/png;base64,{{image}}' width="200" height="200"/> 
+<script>
+ 
+ const queryString = window.location.search;
+ const urlParams = new URLSearchParams(queryString);
+ const category = urlParams.get('category')
+ const commodity_name = urlParams.get('commodity_name')
+ const commodity_variety = urlParams.get('commodity_variety')
+ const commodity_size = urlParams.get('commodity_size')
+ const commodity_defect_type = urlParams.get('commodity_defect_type')
+ const commodity_defect_value = urlParams.get('commodity_defect_value')
+ const rank = urlParams.get('rank')
+ const shelflife = urlParams.get('shelflife')
+//  const timestamp = urlParams.get('timestamp')
+//  const rank = urlParams.get('rank')
+
+
+ document.getElementById("category").innerHTML = 'Category :'+category;
+ document.getElementById("commodity_name").innerHTML = 'Commodity Name :'+commodity_name;
+ document.getElementById("commodity_variety").innerHTML = 'Commodity Variety :'+commodity_variety;
+ document.getElementById("commodity_size").innerHTML = 'Commodity Size :'+commodity_size;
+ document.getElementById("commodity_defect_type").innerHTML = 'Commodity Defect Type :'+commodity_defect_type;
+ document.getElementById("commodity_defect_value").innerHTML = 'Commodity Defect Value :'+commodity_defect_value; 
+ document.getElementById("rank").innerHTML = 'Rank :'+rank;
+ document.getElementById("shelflife").innerHTML = 'shelflife:'+shelflife + ' Days';
+//  document.getElementById("timestamp").innerHTML = 'Timestamp :'+timestamp; 
+
+//  document.getElementById('img').src = 'data:image/png;base64, '+uri ;
+    </script>
+</body>
+</html>
