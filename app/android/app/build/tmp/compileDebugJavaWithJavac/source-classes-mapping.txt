@@ -1,0 +1,14 @@
+com/rainbowcatalogappnew/ReactNativeFlipper.java
+ com.rainbowcatalogappnew.ReactNativeFlipper
+ com.rainbowcatalogappnew.ReactNativeFlipper$1
+ com.rainbowcatalogappnew.ReactNativeFlipper$2
+ com.rainbowcatalogappnew.ReactNativeFlipper$2$1
+com/rainbowcatalogappnew/BuildConfig.java
+ com.rainbowcatalogappnew.BuildConfig
+com/rainbowcatalogappnew/MainActivity.java
+ com.rainbowcatalogappnew.MainActivity
+com/facebook/react/PackageList.java
+ com.facebook.react.PackageList
+com/rainbowcatalogappnew/MainApplication.java
+ com.rainbowcatalogappnew.MainApplication
+ com.rainbowcatalogappnew.MainApplication$1

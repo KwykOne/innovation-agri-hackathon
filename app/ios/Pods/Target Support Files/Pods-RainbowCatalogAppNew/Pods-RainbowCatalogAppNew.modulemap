@@ -1,0 +1,6 @@
+module Pods_RainbowCatalogAppNew {
+  umbrella header "Pods-RainbowCatalogAppNew-umbrella.h"
+
+  export *
+  module * { export * }
+}
