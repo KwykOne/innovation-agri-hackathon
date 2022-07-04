@@ -1,0 +1,19 @@
+curl --location --request POST 'localhost:8080/api/v1/optimise-multinode' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "request_id": "some_sha_value",
+    "location_list":
+    [{
+        "latitude": 28.660183761958574,
+        "longitude": 77.22854375839233
+    },
+    {
+        "latitude": 28.65771717702983,
+        "longitude": 77.2172999382019
+    },
+    {
+        "latitude": 28.645703514027513,
+        "longitude": 77.21066951751709
+    }
+    ]
+}'
