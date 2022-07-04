@@ -11,7 +11,7 @@ Assumptions (if any)
 user register with details 
 
 Working demo of prototype	
-[working link](https://allbvegan/farmselect)
+[working link](https://www.allbvegan.com/farmselect)
 
 Instructions to build & operate the app	
 click on the link above and register
