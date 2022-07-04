@@ -24,6 +24,9 @@ A prototype for load & route optimization to determine optimal vehicle load and 
 
 ![](route_optimisation.png)
 
+### Prototype URL
+
+https://drive.google.com/file/d/186LFqUmkXxYPa-V2yRkDFljE_qOAFvF-/view
 
 ## Building and Running the service
 
