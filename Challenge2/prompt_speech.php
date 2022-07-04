@@ -45,16 +45,29 @@ header('Access-Control-Allow-Origin: *');
     font-size: 16px;
     font-weight: bold;
 }
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #e4e4e4;
+  color: white;
+  text-align: center;
+}
         </style>
 </head>
 <script src="./cm.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 <body style='width:100%;height:100%;'>
+
+  <div style='width:80%;margin:auto;border-width: 10px;text-align: center;border-color: black;padding: 20px;'>
+                मेरा खेत
+        </div>
   <div style='width:80%;margin:auto;border-width: 10px;text-align: center;border-color: black;padding: 20px;background-color: #eaf7ea;'>
         <div>
 
                 <div id="olContainer"><div class='col-sm-12 col-md-6' id="uploadedImageDisplay" style='margin:auto'></div>
-                        <form id="DropboxForm" name="DropboxForm"><div id="dropBox"><p>Select file to upload</p></div>
+                        <form id="DropboxForm" name="DropboxForm"><div id="dropBox"><p>फोटो अपलोड करें</p></div>
                                 <div id="DropBoxFiles">
                                         <input type="file" name="fileInput" id="fileInput">
                                 </div>
@@ -73,33 +86,39 @@ header('Access-Control-Allow-Origin: *');
         <div id=container>
                 <table cellspacing=10px font-size:10px;>
                         <tr>
-                                <td>Name</td>
+                                <td>नाम</td>
                                 <td><input autocomplete="off" id=name class=attribs onclick=recvSpeech('name');></td>
                         </tr>
                         <tr>
-                                <td>Price</td>
+                                <td>कीमत</td>
                                 <td><input autocomplete="off" id=price class=attribs onclick=recvSpeech('price');></td>
                         </tr>
                         <tr>
-                                <td>Units</td>
+                                <td>इकाई</td>
                                 <td><input id=unit class=attribs onclick=recvSpeech('unit');></td>
                         </tr>
                         <tr>
-                                <td>Quantity</td>
+                                <td>मात्रा</td>
                                 <td><input id=quantity class=attribs onclick=recvSpeech('quantity');></td>
                         </tr>
                         <tr>
-                                <td>Description</td>
+                                <td>विवरण</td>
                                 <td><input id=description class=attribs onclick=recvSpeech('description');></td>
                         </tr>
                 </table>
         </div>
   </div>
+        <div><br></div>
 
-  <div onclick=saverecord() style='bottom:-100px;padding:20px;font-size:30px;text-align:center;width:88%;margin:auto;'>
-  Save
+  <div onclick=saverecord() style='bottom:-100px;background-color:#eaf7ea;padding:20px;font-size:30px;text-align:center;width:88%;margin:auto;'>
+  दर्ज करें | Save
   </div>
+        <br><br>
+        <div style='text-align:center;width:100%;'><a href='https://ondc.rahainnovations.com/sandbox/innovation/catalogue' target="_blank" >सूची</a></div>       
 
+ <div class="footer">
+  <p>RahaInfoSystems LLP</p>
+</div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script>
