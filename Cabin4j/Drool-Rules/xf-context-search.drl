@@ -1,0 +1,43 @@
+import java.lang.*;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
+
+import com.cabin4j.suite.platform.integration.v1.data.PlatformIntegrationData;
+import com.cabin4j.utility.SpringUtils;
+
+import com.ondc.service.ContextulizeSearch;
+
+global  SpringUtils springUtils;
+
+rule "xf-context-search"
+when
+   $data : PlatformIntegrationData();
+then
+
+
+   		if (null != $data.getRequest() && null != $data.getRequest().get("query")
+   				&& StringUtils.isNotBlank((String) $data.getRequest().get("query"))) {
+   			Logger log = LoggerFactory.getLogger(Object.class);
+   			ContextulizeSearch contextulizeSearch =  springUtils.getBean(ContextulizeSearch.class);
+   			try {
+   			    $data.getResponse().put("context",contextulizeSearch.contextulizedSearch(((String) $data.getRequest().get("query")).trim(),true));
+   				$data.getResponse().put("status", 200);
+   				$data.setResponseStatus(HttpStatus.OK);
+   			} catch (Exception e) {
+   				log.error("Exception occurred while resolving context for search: {}",
+   						$data.getRequest().get("messageId"), e);
+   				$data.getResponse().put("status", 500);
+   				$data.setResponseStatus(HttpStatus.OK);
+   				return;
+   			}
+   		} else {
+   			$data.getResponse().put("error", "Request Parameters Missing!");
+   			$data.getResponse().put("status", 400);
+   			$data.setResponseStatus(HttpStatus.BAD_REQUEST);
+   		}
+end
