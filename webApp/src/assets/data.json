@@ -1,0 +1,26 @@
+{
+    "crop":[
+        {
+            "name":"Ragi",
+            "value":"ragi"
+        },
+        {
+            "name":"Beans",
+            "value":"beans"
+        },
+        {
+            "name":"Brijal",
+            "value":"brinjal"
+        }
+    ],
+    "timeLine":[
+        {
+            "name":"Month",
+            "value":"mt"
+        },
+        {
+            "name":"Day",
+            "value":"day"
+        }
+    ]
+}

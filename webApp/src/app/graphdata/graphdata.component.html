@@ -1,0 +1,114 @@
+<div class="col-md-12" style="height: 85vh; overflow: auto;">
+    <div class="d-flex justify-content-center py-5">
+        <div class="dropdown ms-4 w-25">
+            <select name="" id="" class="drop-down" [(ngModel)]="fetchFilter.cropData" (change)="GetData()">
+                <option value="" disabled>Select Crop</option>
+                <option *ngFor="let data of appService.cropData" [value]="data.value">{{data.name}}</option>
+            </select>
+        </div>
+        <!-- <div class="dropdown ms-4  w-25">
+        <select name="" id="" class="drop-down"  [(ngModel)]="fetchFilter.timeLine" (change)="GetData()">
+            <option value="" disabled>Select Time Line</option>
+            <option *ngFor="let data of appService.timeLineData" [value]="data.value">{{data.name}}</option>
+        </select>
+      </div> -->
+    </div>
+
+    <div style="color: white;font-size: 2rem;text-align: center;" *ngIf="fetchFilter.cropData == ''">
+        Please select Crop
+    </div>
+    
+    <div class="d-flex justify-content-around p-4" *ngIf="fetchFilter.cropData != ''">
+        <div style="box-shadow: 1px 1px 8px #878484;" class="border p-4 w-75">
+            <table slot="table" class="formTable w-100" style="table-layout: fixed; color: white; font-size: 1.8rem;">
+                <colgroup>
+                    <col style="width: 40%;">
+                    <col style="width: 10%;">
+                    <col style="width: 50%;">
+                </colgroup>
+                <tr>
+                    <td>
+                        Crop Name
+                    </td>
+                    <td>:</td>
+                    <td style="text-transform: capitalize;">
+                        {{cropValue.name}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Model last trained date 
+                    </td>
+                    <td>:</td>
+                    <td>
+                        {{cropValue.Date}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Price at last trained date(in Quintal)
+                    </td>
+                    <td>:</td>
+                    <td>
+                        {{cropValue.currentPrice}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Future price prediction(in Quintal)
+                    </td>
+                    <td>:</td>
+                    <td>
+                        {{cropValue.predictionprice}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        % Increase / Decrease
+                    </td>
+                    <td>:</td>
+                    <td [style.color]="(cropValue.inc_dec < 0) ? 'red' :  'green'">
+                        <div class="d-flex justify-content-start">
+                            <div class="me-2">
+                                <i *ngIf="(cropValue.inc_dec < 0)" class="fa-solid fa-arrow-down"></i>
+                                <i *ngIf="(cropValue.inc_dec > 0)" class="fa-solid fa-arrow-up"></i>
+                            </div>
+                            <div>
+                                {{cropValue.inc_dec}}
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="w-100"  >
+        <div style="color: white;font-size: 2rem;text-align: center;" *ngIf="fetchFilter.cropData != ''">Predicted Price</div>
+        <div id="chartdiv" style="width: 100%; height: 500px"></div>
+        <div class="d-flex justify-content-center" *ngIf="fetchFilter.cropData != ''">
+            <div class="d-flex m-3" style="color: white;">
+                <div style="height: 30px;width: 30px;background-color: #0505f5;border-radius: 50%;"></div> <span
+                    class="m-1">Max Price(in Quintal)</span>
+            </div>
+            <div class="d-flex m-3" style="color: white;">
+                <div style="height: 30px;width: 30px;background-color: #05f545;border-radius: 50%;"></div> <span
+                    class="m-1">Min Price(in Quintal)</span>
+            </div>
+            <div class="d-flex m-3" style="color: white;">
+                <div style="height: 30px;width: 30px;background-color: #f50d05;border-radius: 50%;"></div> <span
+                    class="m-1">Modal Price(in Quintal)</span>
+            </div>
+        </div>
+    </div>
+    <div class="w-100"  >
+        <div style="color: white;font-size: 2rem;text-align: center;" *ngIf="fetchFilter.cropData != ''">History Price</div>
+        <div id="HistoryPrice" style="width: 100%; height: 500px"></div>
+        <div class="d-flex justify-content-center" *ngIf="fetchFilter.cropData != ''">
+            
+            <div class="d-flex m-3" style="color: white;">
+                <div style="height: 30px;width: 30px;background-color: #f50d05;border-radius: 50%;"></div> <span
+                    class="m-1">History Price(in Quintal)</span>
+            </div>
+        </div>
+    </div>
+</div>
