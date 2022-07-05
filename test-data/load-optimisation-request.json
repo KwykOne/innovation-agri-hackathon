@@ -1,0 +1,68 @@
+{
+  "request_id": "UUID",
+  "type_of_good": 1,
+  "vehicle":
+  {
+    "max_load_capacity": 100,
+    "height_in_cm": 100,
+    "width_in_cm": 5000,
+    "length_in_cm": 1
+  },
+  "number_of_items": 6,
+  "item": [
+    {
+      "name": "first",
+      "weight": 20,
+      "box_length_in_cm": 5000,
+      "box_width_in_cm": 1,
+      "box_height_in_cm": 25,
+      "shelf_life_days": 17,
+      "cost": 270
+    },
+    {
+      "name": "second",
+      "weight": 20,
+      "box_length_in_cm": 5000,
+      "box_width_in_cm": 1,
+      "box_height_in_cm": 25,
+      "shelf_life_days": 7,
+      "cost": 270
+    },
+    {
+      "name": "third",
+      "weight": 20,
+      "box_length_in_cm": 5000,
+      "box_width_in_cm": 1,
+      "box_height_in_cm": 25,
+      "shelf_life_days": 2,
+      "cost": 270
+    },
+    {
+      "name": "fourth",
+      "weight": 20,
+      "box_length_in_cm": 5000,
+      "box_width_in_cm": 1,
+      "box_height_in_cm": 25,
+      "shelf_life_days": 7,
+      "cost": 270
+    },
+    {
+      "name": "fifth",
+      "weight": 20,
+      "box_length_in_cm": 5000,
+      "box_width_in_cm": 1,
+      "box_height_in_cm": 25,
+      "shelf_life_days": 2,
+      "cost": 270
+    },
+    {
+      "name": "sixth",
+      "weight": 20,
+      "box_length_in_cm": 5000,
+      "box_width_in_cm": 1,
+      "box_height_in_cm": 25,
+      "shelf_life_days": 1,
+      "cost": 270
+    }
+  ]
+}

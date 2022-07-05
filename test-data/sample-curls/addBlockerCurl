@@ -1,0 +1,13 @@
+curl --location --request POST 'localhost:8080/api/v1/report-blocker' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "blocker_type": "Accident",
+    "road_start_coordinate": {
+        "longitude": 77.218931,
+        "latitude": 28.657039
+    },
+    "road_end_coordinate": {
+        "longitude": 77.21833,
+        "latitude": 28.657171
+    }
+}'
