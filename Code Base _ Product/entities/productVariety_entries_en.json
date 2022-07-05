@@ -1,0 +1,20 @@
+[
+  {
+    "value": "type1",
+    "synonyms": [
+      "type1"
+    ]
+  },
+  {
+    "value": "type2",
+    "synonyms": [
+      "type2"
+    ]
+  },
+  {
+    "value": "type3",
+    "synonyms": [
+      "type3"
+    ]
+  }
+]

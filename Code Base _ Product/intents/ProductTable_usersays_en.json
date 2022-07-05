@@ -1,0 +1,133 @@
+[
+  {
+    "id": "3f6f2701-13ae-4824-b25c-a2ad569e589b",
+    "data": [
+      {
+        "text": "add to products",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "5c288e1b-32f5-45ad-8e8f-9c32e2dd7609",
+    "data": [
+      {
+        "text": "pune",
+        "meta": "@sys.geo-city",
+        "alias": "geo-city",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "bd24f968-2920-468b-9d39-95122f43bc52",
+    "data": [
+      {
+        "text": "add to product table",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "858707eb-cc81-4c7f-92a8-145f9647996b",
+    "data": [
+      {
+        "text": "add to catalogue",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "8f8373c0-b006-403c-9830-bd383dd5bf80",
+    "data": [
+      {
+        "text": "variety is ",
+        "userDefined": false
+      },
+      {
+        "text": "type1",
+        "meta": "@productVariety",
+        "alias": "productVariety",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "1479c464-efdb-4ecd-94f6-0042a3995e40",
+    "data": [
+      {
+        "text": "10kg",
+        "meta": "@sys.unit-weight",
+        "alias": "unit-weight",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "5a8bc77d-ac7f-4a3f-84bd-7cf4b6587f3b",
+    "data": [
+      {
+        "text": "milk",
+        "meta": "@productName",
+        "alias": "productName",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "20950afc-70e0-4bee-8378-483e0caa78cb",
+    "data": [
+      {
+        "text": "bread",
+        "meta": "@productName",
+        "alias": "productName",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "f6599241-680f-4c62-a6e6-12ce222f2975",
+    "data": [
+      {
+        "text": "testing",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  }
+]

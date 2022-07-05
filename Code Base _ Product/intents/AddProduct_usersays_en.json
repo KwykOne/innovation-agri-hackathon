@@ -1,0 +1,41 @@
+[
+  {
+    "id": "90b87675-2a8f-4299-a391-269a08d0cb54",
+    "data": [
+      {
+        "text": "product",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "41333e3d-6baa-4786-a2da-b61d1a4ebd9e",
+    "data": [
+      {
+        "text": "add product",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "74ca89d2-25d0-4822-95b1-b6a1af7a6ada",
+    "data": [
+      {
+        "text": "add",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  }
+]

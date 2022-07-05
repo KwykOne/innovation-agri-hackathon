@@ -1,0 +1,57 @@
+{
+  "id": "b4390acb-4994-4dc2-a23f-bd84140652ce",
+  "name": "AskVariety",
+  "auto": true,
+  "contexts": [
+    "awaiting_product_name"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [
+        {
+          "name": "awaiting_variety",
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "id": "a1ee6eb9-3b4e-4aeb-8938-ee786cb3472c",
+          "name": "product_name",
+          "required": false,
+          "dataType": "@productName",
+          "value": "$product_name",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        }
+      ],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "Enter Variety of $product_name"
+          ],
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

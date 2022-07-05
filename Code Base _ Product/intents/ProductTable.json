@@ -1,0 +1,112 @@
+{
+  "id": "dc0f9fda-76dc-41b3-98a3-b8d4d2cc3114",
+  "name": "ProductTable",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "1da00195-8c39-432b-8717-493b47ad741a",
+          "name": "productName",
+          "required": true,
+          "dataType": "@productName",
+          "value": "$productName",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Enter product name"
+            }
+          ],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "b25628b8-d667-47a3-833f-361b745fd5fd",
+          "name": "productVariety",
+          "required": true,
+          "dataType": "@productVariety",
+          "value": "$productVariety",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Enter variety of the product"
+            }
+          ],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "b7956e31-a420-48b9-9ac7-8441c655b683",
+          "name": "unit-weight",
+          "required": true,
+          "dataType": "@sys.unit-weight",
+          "value": "$unit-weight",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Enter product weight"
+            }
+          ],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        },
+        {
+          "id": "eb07c855-dc75-40f9-8b48-996f8efd6e49",
+          "name": "geo-city",
+          "required": true,
+          "dataType": "@sys.geo-city",
+          "value": "$geo-city",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Enter location"
+            }
+          ],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        }
+      ],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "Product Summary: $productName $productVariety $unit-weight $geo-city"
+          ],
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

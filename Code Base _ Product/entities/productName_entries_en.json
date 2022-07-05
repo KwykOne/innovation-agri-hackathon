@@ -1,0 +1,47 @@
+[
+  {
+    "value": "rice",
+    "synonyms": [
+      "rice"
+    ]
+  },
+  {
+    "value": "wheat",
+    "synonyms": [
+      "wheat"
+    ]
+  },
+  {
+    "value": "apple",
+    "synonyms": [
+      "apple"
+    ]
+  },
+  {
+    "value": "dall",
+    "synonyms": [
+      "dall"
+    ]
+  },
+  {
+    "value": "chawal",
+    "synonyms": [
+      "chawal"
+    ]
+  },
+  {
+    "value": "doodh",
+    "synonyms": [
+      "doodh",
+      "milk"
+    ]
+  },
+  {
+    "value": "cheeni",
+    "synonyms": [
+      "chini",
+      "chiini",
+      "sugar"
+    ]
+  }
+]

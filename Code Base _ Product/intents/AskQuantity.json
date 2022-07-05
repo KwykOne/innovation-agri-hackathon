@@ -1,0 +1,62 @@
+{
+  "id": "2090c184-fd97-408d-91d5-bf5c3b7ed993",
+  "name": "AskQuantity",
+  "auto": true,
+  "contexts": [
+    "awaiting_variety"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [
+        {
+          "name": "awaiting_quantity",
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "id": "0dc15b9c-8827-4e26-a874-fc111d44ffa5",
+          "name": "product_variety",
+          "required": false,
+          "dataType": "@productVariety",
+          "value": "$product_variety",
+          "defaultValue": "",
+          "isList": false,
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Enter variety"
+            }
+          ],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        }
+      ],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "Enter Quantity of $product_variety"
+          ],
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

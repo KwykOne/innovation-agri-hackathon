@@ -1,0 +1,21 @@
+[
+  {
+    "id": "f2a4ef50-2285-49bb-92ab-c1303dc94051",
+    "data": [
+      {
+        "text": "product name is ",
+        "userDefined": false
+      },
+      {
+        "text": "rice",
+        "meta": "@productName",
+        "alias": "product_name",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  }
+]

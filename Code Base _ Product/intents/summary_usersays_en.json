@@ -1,0 +1,21 @@
+[
+  {
+    "id": "36d4a7b6-29cf-4172-ae31-aa1f65bc7cc5",
+    "data": [
+      {
+        "text": "quantity in kilograms is ",
+        "userDefined": false
+      },
+      {
+        "text": "10",
+        "meta": "@sys.number",
+        "alias": "number",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  }
+]
