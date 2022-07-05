@@ -1,0 +1,5 @@
+Description:
+We are a buyers app that have created an immersive experience of buying veggies and fruits in a 3D Environment, which is also VR Compatible.
+
+Link to the buyer app:
+https://oeirna.gmetri.com/sabzikart_ondc
