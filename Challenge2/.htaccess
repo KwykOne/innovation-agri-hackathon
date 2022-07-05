@@ -1,0 +1,11 @@
+RewriteEngine On
+
+#remove the need for .php extention 
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php
+
+Header set Access-Control-Allow-Origin "*"
+
+php_value upload_max_filesize 5M
+php_value post_max_size 5M
