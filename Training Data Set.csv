@@ -1,0 +1,124 @@
+Categories,Commodity,Variety,size,defect type,defect value,defect_cat_value,Range
+vegetable,onion,v1,65,0,0,0,1
+vegetable,onion,v1,45,0,0,0,2
+vegetable,onion,v1,25,0,0,0,3
+vegetable,onion,v1,0,cut,1,1,1
+vegetable,onion,v1,0,cut,2,2,2
+vegetable,onion,v1,0,cut,15,3,3
+vegetable,onion,v1,0,Split/Double split,2,1,1
+vegetable,onion,v1,0,Split/Double split,5,2,2
+vegetable,onion,v1,0,Split/Double split,8,3,3
+vegetable,onion,v1,0,sprouted,2,1,1
+vegetable,onion,v1,0,sprouted,5,2,2
+vegetable,onion,v1,0,sprouted,8,3,3
+vegetable,onion,v1,0,rooting,2,1,1
+vegetable,onion,v1,0,rooting,5,2,2
+vegetable,onion,v1,0,rooting,8,3,3
+vegetable,potato,v2,70,0,0,0,1
+vegetable,potato,v2,55,0,0,0,2
+vegetable,potato,v2,25,0,0,0,3
+vegetable,potato,v2,0,Cracks/cut,5,1,1
+vegetable,potato,v2,0,Cracks/cut,10,2,2
+vegetable,potato,v2,0,Cracks/cut,15,3,3
+vegetable,potato,v2,0,Greening,2,1,1
+vegetable,potato,v2,0,Greening,3,2,2
+vegetable,potato,v2,0,Greening,>3,3,3
+vegetable,potato,v2,0,Holes,1,1,1
+vegetable,potato,v2,0,Holes,2,2,2
+vegetable,potato,v2,0,Holes,>3,3,3
+vegetable,potato,v2,0,Mechanical_injury,2,1,1
+vegetable,potato,v2,0,Mechanical_injury,3,2,2
+vegetable,potato,v2,0,Mechanical_injury,>3,3,3
+vegetable,tomato,v3,65,0,0,0,1
+vegetable,tomato,v3,55,0,0,0,2
+vegetable,tomato,v3,45,0,0,0,3
+vegetable,tomato,v3,0,Dry_crack/cut,2,1,1
+vegetable,tomato,v3,0,Dry_crack/cut,3,2,2
+vegetable,tomato,v3,0,Dry_crack/cut,>3,3,3
+vegetable,tomato,v3,0,Sunburn,2,1,1
+vegetable,tomato,v3,0,Sunburn,3,2,2
+vegetable,tomato,v3,0,Sunburn,>3,3,3
+vegetable,tomato,v3,0,Mechanical_injury,2,1,1
+vegetable,tomato,v3,0,Mechanical_injury,3,2,2
+vegetable,tomato,v3,0,Mechanical_injury,>3,3,3
+vegetable,tomato,v3,0,Discolouration,3,1,1
+vegetable,tomato,v3,0,Discolouration,5,2,2
+vegetable,tomato,v3,0,Discolouration,>5,3,3
+vegetable,Shelling_peas,v4,65,0,0,0,1
+vegetable,Shelling_peas,v4,55,0,0,0,2
+vegetable,Shelling_peas,v4,45,0,0,0,3
+vegetable,Shelling_peas,v4,0,Under_developed,3,1,1
+vegetable,Shelling_peas,v4,0,Under_developed,5,2,2
+vegetable,Shelling_peas,v4,0,Under_developed,>5,3,3
+vegetable,Shelling_peas,v4,0,Black/ brown_spots,1,1,1
+vegetable,Shelling_peas,v4,0,Black/ brown_spots,2,2,2
+vegetable,Shelling_peas,v4,0,Black/ brown_spots,3,3,3
+vegetable,Shelling_peas,v4,0,Dry_skin,10,1,1
+vegetable,Shelling_peas,v4,0,Dry_skin,20,2,2
+vegetable,Shelling_peas,v4,0,Dry_skin,>20,3,3
+vegetable,Bitter_Gourd,v5,150,0,0,0,1
+vegetable,Bitter_Gourd,v5,100,0,0,0,2
+vegetable,Bitter_Gourd,v5,60,0,0,0,3
+vegetable,Bitter_Gourd,v5,0,Skin/Color_defects,3,1,1
+vegetable,Bitter_Gourd,v5,0,Skin/Color_defects,5,2,2
+vegetable,Bitter_Gourd,v5,0,Skin/Color_defects,7,3,3
+vegetable,Bitter_Gourd,v5,0,Color ,70,1,1
+vegetable,Bitter_Gourd,v5,0,Color ,40,2,2
+vegetable,Bitter_Gourd,v5,0,Color ,>40,3,3
+vegetable,CAULIFLOWER,v6,65,0,0,0,1
+vegetable,CAULIFLOWER,v6,55,0,0,0,2
+vegetable,CAULIFLOWER,v6,45,0,0,0,3
+vegetable,CAULIFLOWER,v6,0,Bruising,3,1,1
+vegetable,CAULIFLOWER,v6,0,Bruising,5,2,2
+vegetable,CAULIFLOWER,v6,0,Bruising,7,3,3
+vegetable,CAULIFLOWER,v6,0,Color,3,1,1
+vegetable,CAULIFLOWER,v6,0,Color,5,2,2
+vegetable,CAULIFLOWER,v6,0,Color,7,3,3
+vegetable,CAULIFLOWER,v6,0,Wooliness,3,1,1
+vegetable,CAULIFLOWER,v6,0,Wooliness,5,2,2
+vegetable,CAULIFLOWER,v6,0,Wooliness,7,3,3
+fruit,apple,v7,90,0,0,0,1
+fruit,apple,v7,70,0,0,0,2
+fruit,apple,v7,50,0,0,0,3
+fruit,apple,v7,0,dry_healed_hail,10,1,1
+fruit,apple,v7,0,dry_healed_hail,15,2,2
+fruit,apple,v7,0,dry_healed_hail,20,3,3
+fruit,apple,v7,0,russetting,2,1,1
+fruit,apple,v7,0,russetting,4,2,2
+fruit,apple,v7,0,russetting,6,3,3
+fruit,apple,v7,0,soft_patch,2,1,1
+fruit,apple,v7,0,soft_patch,4,2,2
+fruit,apple,v7,0,soft_patch,6,3,3
+fruit,orange,v8,66,0,0,0,1
+fruit,orange,v8,55,0,0,0,2
+fruit,orange,v8,80,0,0,0,3
+fruit,orange,v8,0,discoloration ,2,1,1
+fruit,orange,v8,0,discoloration ,5,2,2
+fruit,orange,v8,0,discoloration ,10,3,3
+fruit,orange,v8,0,slight_bruising-minor_cut,2,1,1
+fruit,orange,v8,0,slight_bruising-minor_cut,5,2,2
+fruit,orange,v8,0,slight_bruising-minor_cut,10,3,3
+fruit,sapota,v9,50,0,0,0,1
+fruit,sapota,v9,40,0,0,0,2
+fruit,sapota,v9,39,0,0,0,3
+fruit,sapota,v9,0,skin_defects,10,1,1
+fruit,sapota,v9,0,skin_defects,15,2,2
+fruit,sapota,v9,0,skin_defects,20,3,3
+fruit,musk_melon,v10,500,0,0,0,1
+fruit,musk_melon,v10,300,0,0,0,2
+fruit,musk_melon,v10,299,0,0,0,3
+fruit,musk_melon,v10,0,superficial_crack_bruises,5,1,1
+fruit,musk_melon,v10,0,superficial_crack_bruises,10,2,2
+fruit,musk_melon,v10,0,superficial_crack_bruises,15,3,3
+fruit,banana,v11,0,0,0,0,0
+fruit,banana,v11,0,0,0,0,0
+fruit,banana,v11,0,0,0,0,0
+fruit,banana,v11,0,cut_bruising,5,1,1
+fruit,banana,v11,0,cut_bruising,10,2,2
+fruit,banana,v11,0,cut_bruising,11,3,3
+fruit,banana,v11,0,chitti,5,1,1
+fruit,banana,v11,0,chitti,8,2,2
+fruit,banana,v11,0,chitti,9,3,3
+fruit,banana,v11,0,black_spot,2,1,1
+fruit,banana,v11,0,black_spot,4,2,2
+fruit,banana,v11,0,black_spot,5,3,3
