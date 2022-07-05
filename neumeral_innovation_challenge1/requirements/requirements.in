@@ -1,0 +1,11 @@
+boto3
+
+lark
+jsonschema
+
+flask
+flask-cors
+langdetect
+elasticsearch
+
+spacy

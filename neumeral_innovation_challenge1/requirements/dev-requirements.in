@@ -1,0 +1,11 @@
+-r requirements.in
+
+pandas
+transformers
+requests
+
+
+ipykernel
+black
+flake8
+#git+https://github.com/awinabi/haystack@669a310#egg=farm-haystack
